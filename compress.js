@@ -13,13 +13,11 @@ module.exports = function(buffer, opts) {
   var lgwin = 22;
   var dictionary = "";
 
-  if (typeof opts === 'boolean') {
-    mode = opts ? 0 : 1;
-  } else if (typeof opts === 'object') {
-    quality = opts.quality || 11;
-    mode = opts.mode || 0;
-    lgwin = opts.lgwin || 22;
-    dictionary = opts.dictionary || "";
+  if (typeof opts === 'object') {
+    quality = opts.quality || quality;
+    mode = opts.mode || mode;
+    lgwin = opts.lgwin || lgwin;
+    dictionary = opts.dictionary || dictionary;
   }
 
   // allocate input buffer and copy data to it
